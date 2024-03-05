@@ -1,5 +1,6 @@
 import * as PIXI from "pixi.js";
 
+
 window.addEventListener("load", () => {
   const app = new PIXI.Application({
     background: "#1099bb",
