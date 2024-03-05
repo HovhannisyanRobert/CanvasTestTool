@@ -1,0 +1,44 @@
+{
+  "name": "pixi-boilerplate",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --open --mode=development",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src --max-warnings 0",
+    "lintfix": "npm run lint -- --fix",
+    "release": "standard-version"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "file-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "raw-loader": "^3.1.0",
+    "standard-version": "^9.3.1",
+    "terser-webpack-plugin": "^2.3.8",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "@pixi/assets": "^7.2.4",
+    "@pixi/runner": "^7.2.3",
+    "eslint": "^6.8.0",
+    "gsap": "^3.12.2",
+    "howler": "^2.2.3",
+    "pixi-spine": "^4.0.4",
+    "pixi-viewport": "^4.32.0",
+    "pixi.js": "^7.2.4",
+    "tweedle.js": "^2.1.0",
+		"@tweenjs/tween.js": "^18"
+
+  },
+  "author": "Dopamine Ltd.",
+  "license": "Apache-2.0"
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PIXI</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        position: relative;
+        overflow: hidden;
+      }
+
+      input {
+        position: absolute;
+        top: 0;
+        width: 100px;
+        height: 50px;
+        border-radius: 10px;
+      }
+
+      #myFile {
+        left: 0;
+      }
+
+      #submit {
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form" action="">
+      <input type="file" accept="img/*" id="myFile" name="filename" />
+      <input type="submit" id="submit" />
+    </form>
+  </body>
+</html>
