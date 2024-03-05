@@ -1,5 +1,6 @@
 import * as PIXI from "pixi.js";
 
+
 window.addEventListener("load", () => {
   console.log(44444);
   const app = new PIXI.Application({
