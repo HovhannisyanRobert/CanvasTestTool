@@ -1,7 +1,6 @@
 import * as PIXI from "pixi.js";
 
 window.addEventListener("load", () => {
-  console.log(44444);
   const app = new PIXI.Application({
     background: "#1099bb",
     width: 1440,
@@ -15,13 +14,23 @@ window.addEventListener("load", () => {
 
   globalThis.__PIXI_APP__ = app; // pixi extension
 
-  const form = document.getElementById("form");
   const myFile = document.getElementById("myFile");
-  form.addEventListener("submit", (e) => {
-    const newUrl = myFile.value.slice(12);
-
-    e.preventDefault();
-    addSprite(newUrl);
+  myFile.addEventListener("change", function (event) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function () {
+        const imgElement = document.createElement("img");
+        imgElement.src = reader.result;
+        fetch(reader.result)
+          .then((res) => res.blob())
+          .then((blob) => {
+            const url = URL.createObjectURL(blob);
+            addSprite(url);
+          });
+      };
+      reader.readAsDataURL(file);
+    }
   });
 
   const mainContainer = new PIXI.Container();
@@ -32,9 +41,7 @@ window.addEventListener("load", () => {
   app.stage.addChild(mainContainer);
 
   async function addSprite(texturePAth) {
-    // const texture = await PIXI.Assets.load(`img/${texturePAth}`);
-
-    const sp = PIXI.Sprite.from(`img/${texturePAth}`);
+    const sp = PIXI.Sprite.from(texturePAth);
 
     sp.eventMode = "static";
     sp.cursor = "pointer";
